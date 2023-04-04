@@ -12,7 +12,7 @@ public class Configuration_serveur {
 
     //ceci n'est pas la meilleur maniere d'implementer un service mais ca sers pour une demonstration du principe
     public static String getData(String serviceName){
-        System.out.println(serviceName);
+        System.out.println("service demandé par l'utilisateur:" + serviceName);
         return connection_manager.dbquery(serviceName);
     }
 }

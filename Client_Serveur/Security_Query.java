@@ -3,12 +3,8 @@ package Client_Serveur;
 public class Security_Query {
     
     public Role checkQueryRole() {
-        // String result = "";
-        // if (role.equals("SELECT * FROM users")) {
-        //     result = "SELECT * FROM users";
-        // }
         Role roleDeDatabase = new Role("ADMIN");
-        System.out.println("ACCES BDD SECURITY QUERY");
+        System.out.println("ACCES BDD SECURITY QUERY - vérification du role");
         return roleDeDatabase;
     }
 
