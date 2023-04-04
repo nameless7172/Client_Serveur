@@ -12,9 +12,7 @@ public class Security_Query {
         return roleDeDatabase;
     }
 
-    public static String getAll() {
-        return "SELECT * FROM users";
-    }
+
 
     public class Glu {
         //implementer la connection comme on le souhaite

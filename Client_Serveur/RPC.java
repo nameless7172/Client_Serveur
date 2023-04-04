@@ -16,10 +16,16 @@ public class RPC {
         public void Communication (){
             this.roleFourni = getRoleFourni();
             this.roleRequis = getRoleRequis();
-            System.out.println(this.roleFourni.getName() + " " + this.roleRequis.getName());
+            // System.out.println(this.roleFourni.getName() + " " + this.roleRequis.getName());
             try{
-                if(this.roleFourni.equals(this.roleRequis)){
+                if(this.roleFourni.getName() == this.roleRequis.getName()){
                     System.out.println("Communication réussie");
+
+                    //lancement du service
+                    String serviceRequis = this.composant_client.getServiceRequis().getAllUsers();
+                    // this.composant_serveur.serviceFourni.services(serviceRequis);
+                    String reponse = this.composant_serveur.getServices(serviceRequis);
+                    System.out.println(reponse);
                 }
             }
             catch(Exception e){

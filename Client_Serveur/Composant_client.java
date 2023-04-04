@@ -3,11 +3,11 @@ package Client_Serveur;
 public class Composant_client {
     public Role roleFourni;
     public Port portRequis;
-    public Service serviceRequis;
+    public ServiceRequis serviceRequis;
     public Configuration_client configuration_client;
     
 
-    public Composant_client(Role roleFourni, Port portRequis, Service serviceRequis, Configuration_client configuration_client) {
+    public Composant_client(Role roleFourni, Port portRequis, ServiceRequis serviceRequis, Configuration_client configuration_client) {
         this.roleFourni = roleFourni;
         this.portRequis = portRequis;
         this.serviceRequis = serviceRequis;
@@ -18,6 +18,9 @@ public class Composant_client {
         return roleFourni;
     }
 
+    public ServiceRequis getServiceRequis(){
+        return serviceRequis;
+    }
 
 
 }

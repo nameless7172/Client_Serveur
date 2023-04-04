@@ -9,4 +9,10 @@ public class Configuration_serveur {
     public static Role getRoleServeur(){
         return connection_manager.SecurityCheck();
     }
+
+    //ceci n'est pas la meilleur maniere d'implementer un service mais ca sers pour une demonstration du principe
+    public static String getData(String serviceName){
+        System.out.println(serviceName);
+        return connection_manager.dbquery(serviceName);
+    }
 }

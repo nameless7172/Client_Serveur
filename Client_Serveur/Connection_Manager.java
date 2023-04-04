@@ -14,6 +14,15 @@ public class Connection_Manager {
         Role role = new Role("admin");
         return role;
     }
+    public String dbquery(String serviceName){
+        //encore une fois, ce code sert pour une demonstration et n'est pas optimal
+        if(serviceName == "getUsersService"){
+            return this.sql_query.getAll();
+        }else{
+            return null;
+        }
+        
+    }
     public String external_socket_data(){
         return "external_socket";
     }

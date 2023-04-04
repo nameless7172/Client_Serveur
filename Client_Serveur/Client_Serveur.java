@@ -10,10 +10,11 @@ public class Client_Serveur {
         // Création des rôles
         Role adminRole = new Role("admin");
 
-        Service download = new Service();
+        ServiceRequis getAllUsers = new ServiceRequis();
+        ServiceFourni sendAllUsers = new ServiceFourni();
         Port port1 = new Port();
         Configuration_client Configuration_client1 = new Configuration_client();
-        Composant_client Client1 = new Composant_client(adminRole, port1, download, Configuration_client1);
+        Composant_client Client1 = new Composant_client(adminRole, port1, getAllUsers, Configuration_client1);
 
         //creation configuration serveur
         Security_Manager securityManager = new Security_Manager();
@@ -22,7 +23,7 @@ public class Client_Serveur {
         Connection_Manager connectionManager = new Connection_Manager(clearanceRequest,sql_query); // create an instance of Connection_Manager
 
         Configuration_serveur Configuration_serveur1 = new Configuration_serveur(connectionManager);
-        Composant_serveur serveur1 = new Composant_serveur(adminRole, port1, download, Configuration_serveur1);
+        Composant_serveur serveur1 = new Composant_serveur(adminRole, port1, sendAllUsers, Configuration_serveur1);
 
 
         RPC Client1_Serveur1 = new RPC();
