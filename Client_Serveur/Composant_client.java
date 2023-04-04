@@ -14,4 +14,10 @@ public class Composant_client {
         this.configuration_client = configuration_client;
     }
 
+    public Role getRoleFourni() {
+        return roleFourni;
+    }
+
+
+
 }
