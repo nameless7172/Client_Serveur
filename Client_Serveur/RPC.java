@@ -17,6 +17,7 @@ public class RPC {
             this.roleFourni = getRoleFourni();
             this.roleRequis = getRoleRequis();
             try{
+                //vérification de role 
                 if(this.roleFourni.getName() == this.roleRequis.getName()){
                     System.out.println("Communication réussie");
 

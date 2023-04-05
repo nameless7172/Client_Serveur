@@ -5,8 +5,10 @@ public class SQL_Query {
 
     private Connection connection;
     public static String getAll() {
+        //on simule l'acces au BDD
         System.out.println("ACCES BDD GET");
         return "users test";
+        //connexion bdd
     }
 
 
