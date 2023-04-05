@@ -1,4 +1,5 @@
 package Client_Serveur;
+import java.util.List;
 public class Configuration_serveur {
     private static Connection_Manager connection_manager;
 
@@ -11,8 +12,9 @@ public class Configuration_serveur {
     }
 
     //ceci n'est pas la meilleur maniere d'implementer un service mais ca sers pour une demonstration du principe
-    public static String getData(String serviceName){
+    public static <R> R getData(String serviceName){
         System.out.println("service demandé par l'utilisateur:" + serviceName);
-        return connection_manager.dbquery(serviceName);
+        R result = connection_manager.<R>dbquery(serviceName);
+        return result;
     }
 }

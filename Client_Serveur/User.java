@@ -19,7 +19,7 @@ public class User {
         return this.prenom;
     }
 
-    public Role getRole(){
+    public RoleDataBase getRole(){
         return this.role;
     }
 }

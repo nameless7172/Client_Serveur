@@ -1,4 +1,5 @@
 package Client_Serveur;
+import java.util.List;
 
 public class RPC {
     public String service_type = "communication";
@@ -23,8 +24,9 @@ public class RPC {
 
                     //lancement du service
                     String serviceRequis = this.composant_client.getServiceRequis().getAllUsers();
-                    String reponse = this.composant_serveur.getServices(serviceRequis);
-                    System.out.println(reponse);
+                    List<User> response = this.composant_serveur.<List<User>>getServices(serviceRequis);
+                    System.out.print("Retour du Service : ");
+                    System.out.print(response);
                 }
             }
             catch(Exception e){

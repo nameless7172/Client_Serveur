@@ -1,14 +1,14 @@
 package Client_Serveur;
 import java.sql.*;
+import java.util.List;
 
 public class SQL_Query {
 
-    private Connection connection;
-    public static String getAll() {
+    public <R> R getAll() {
         //on simule l'acces au BDD
-        System.out.println("ACCES BDD GET");
-        return "users test";
-        //connexion bdd
+        Database db = Database.getInstance();
+        R result = (R) db.getAllUsers();
+        return result;
     }
 
 

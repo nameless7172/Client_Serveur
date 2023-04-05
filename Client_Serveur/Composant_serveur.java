@@ -1,4 +1,5 @@
 package Client_Serveur;
+import java.util.List;
 
 public class Composant_serveur {
     public Role roleRequis;
@@ -18,10 +19,10 @@ public class Composant_serveur {
         return roleRequis;
     }
 
-    public String getServices(String serviceName){
+    public <R> R getServices(String serviceName){
         String askedService = this.serviceFourni.services(serviceName);
-        
-        return Configuration_serveur.getData(askedService);
+        R result = Configuration_serveur.<R>getData(askedService);
+        return result;
     }
 
 }

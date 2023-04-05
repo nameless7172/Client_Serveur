@@ -1,4 +1,5 @@
 package Client_Serveur;
+import java.util.List;
 
 public class Connection_Manager {
     private ClearanceRequest clearanceRequest;
@@ -14,14 +15,15 @@ public class Connection_Manager {
         Role role = new Role("admin");
         return role;
     }
-    public String dbquery(String serviceName){
+    public <R> R dbquery(String serviceName){
         //encore une fois, ce code sert pour une demonstration et n'est pas optimal
-        if(serviceName == "getUsersService"){
-            return this.sql_query.getAll();
-        }else{
-            return null;
-        }
-        
+        switch(serviceName){
+            case "getUsersService":
+                R result = (R) this.sql_query.<R>getAll();
+                return result;
+            default:
+                return null;
+        }       
     }
     public String external_socket_data(){
         return "external_socket";

@@ -1,5 +1,7 @@
 package Client_Serveur;
 
+import java.io.Console;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Database {
@@ -10,12 +12,14 @@ public class Database {
 
 
     private Database() {
+        this.roles = new ArrayList<RoleDataBase>();
+        this.users = new ArrayList<User>();
         RoleDataBase adminRole = new RoleDataBase("admin");
         RoleDataBase userRole = new RoleDataBase("user");
-        roles.add(adminRole);
-        roles.add(userRole);
-        users.add(new User("theo", "vivi", userRole ));
-        users.add(new User("admin", "superAdmin", adminRole ));
+        this.roles.add(adminRole);
+        this.roles.add(userRole);
+        this.users.add(new User("theo", "vivi", userRole ));
+        this.users.add(new User("admin", "superAdmin", adminRole ));
     }
 
     public static Database getInstance() {
@@ -25,12 +29,20 @@ public class Database {
         return database;
     }
 
-    private void addRole(String name){
+    public void addRole(String name){
         roles.add(new RoleDataBase(name));
     }
 
-    private void addUser(String name){
+    public void addUser(String name){
         roles.add(new RoleDataBase(name));
+    }
+
+    public List<User> getAllUsers(){
+        return this.users;
+    }
+
+    public List<RoleDataBase> getAllRoles(){
+        return this.roles;
     }
    
 }
